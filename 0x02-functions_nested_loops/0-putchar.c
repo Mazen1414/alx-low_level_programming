@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	char c[] = "Holberton";
+	char c[] = "putchar";
 	int i;
 
 	for (i = 0; i < 9; i++)
@@ -15,3 +15,4 @@ int main(void)
 	_putchar('\n');
 	return (0);
 }
+
