@@ -1,22 +1,32 @@
-C - Static libraries
+# 0x09-static_libraries
 
+## Build
 
-TASKS
+- create `build` directory, the directory to build object files in
 
+`mkdir build`
 
-[0. A library is not a luxury but one of the necessities of life](libmy.a)
+- compile `.c` source files
 
+```bash
+cd build
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c -I.. ../lib/*.c
+cd ..
+```
 
-Create the static library libmy.a containing all the functions listed below:
+- now create static lib
 
+`ar -rc libmy.a build/*.o`
 
-If you haven’t coded all of the above functions create empty ones with the right prototype.
+- compile our `main.c`
 
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -L. -lmy -o qoute main.c`
 
-Don’t forget to push your main.h file to your repository. It should at least contain all the prototypes of the above functions.
+- Yay!!, We are done, Now Execute
 
+`./qoute`
 
-[1. Without libraries what have we? We have no past and no future](create_static_lib.sh)
-
-
-Create a script called create_static_lib.sh that creates a static library called liball.a from all the .c files that are in the current directory.
+```
+"At the end of the day, my goal was to be the best hacker"
+        - Kevin Mitnick
+```
